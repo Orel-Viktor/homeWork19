@@ -2,17 +2,29 @@
 import "./style.css";
 
 
-const Weather = function () {
-  const chooseCity = document.querySelector(".js--choose-city");
-  const sendBtn = document.querySelector(".js--send");
-  const cityName = document.querySelector(".js--city-name");
-  const cityTemp = document.querySelector(".js--temp");
-  const cityPressure = document.querySelector(".js--pressure");
-  const cityDescription = document.querySelector(".js--description");
-  const cityHumidity = document.querySelector(".js--humidity");
-  const citySpeed = document.querySelector(".js--speed");
-  const cityDeg = document.querySelector(".js--deg");
-  const cityIcon = document.querySelector(".js--icon");
+const Weather = function ({
+  selectCity, 
+  btn, 
+  nameCity, 
+  tempCity, 
+  pressureCity, 
+  descriptionCity, 
+  humidityCity, 
+  speedCity, 
+  degCity, 
+  iconCity,
+})
+   {
+  const chooseCity = document.querySelector(selectCity);
+  const sendBtn = document.querySelector(btn);
+  const cityName = document.querySelector(nameCity);
+  const cityTemp = document.querySelector(tempCity);
+  const cityPressure = document.querySelector(pressureCity);
+  const cityDescription = document.querySelector(descriptionCity);
+  const cityHumidity = document.querySelector(humidityCity);
+  const citySpeed = document.querySelector(speedCity);
+  const cityDeg = document.querySelector(degCity, );
+  const cityIcon = document.querySelector(iconCity);
   let cityIconvValue = "undefined";
 
   this.chooseCity = () => {
@@ -46,5 +58,34 @@ const Weather = function () {
   };
 };
 
-const weather = new Weather();
+const weather = new Weather(
+   {
+    selectCity: ".js--choose-city", 
+    btn:".js--send", 
+    nameCity:".js--city-name", 
+    tempCity:".js--temp", 
+    pressureCity:".js--pressure", 
+    descriptionCity:".js--description", 
+    humidityCity:".js--humidity", 
+    speedCity:".js--speed", 
+    degCity:".js--deg", 
+    iconCity:".js--icon",
+ }
+);
 weather.sendInfo();
+
+const weather1 = new Weather(
+  {
+    selectCity: ".js--choose-city1", 
+    btn:".js--send1", 
+    nameCity:".js--city-name1", 
+    tempCity:".js--temp1", 
+    pressureCity:".js--pressure1", 
+    descriptionCity:".js--description1", 
+    humidityCity:".js--humidity1", 
+    speedCity:".js--speed1", 
+    degCity:".js--deg1", 
+    iconCity:".js--icon1",
+ }
+)
+weather1.sendInfo()
